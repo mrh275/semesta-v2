@@ -40,4 +40,7 @@
     .toggle-menu {
         @apply block xl:hidden cursor-pointer;
     }
+    .navbar-fixed {
+        @apply fixed top-0 left-0 w-full z-99;
+    }
 }
