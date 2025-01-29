@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer components {
+    .navbar {
+        @apply bg-white text-zinc-900 flex justify-between items-center py-4 px-12 drop-shadow-sm;
+    }
+}
