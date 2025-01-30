@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer components {
+    .swipper {
+        @apply w-full h-96;
+    }
+}
