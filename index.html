@@ -55,10 +55,21 @@
             Berita
           </a>
         </li>
-        <li class="nav-item">
-          <a href="/ekstrakurikuler" class="nav-link">
+        <li class="nav-item has-dropdown">
+          <a href="javascript:void(0)" class="nav-link">
             Ekstrakurikuler
           </a>
+          <ul class="menu-dropdown">
+            <li class="dropdown-item">
+              <a href="/profil/sejarah.html" class="dropdown-link">Sejarah</a>
+            </li>
+            <li class="dropdown-item">
+              <a href="/profil/visi-misi.html" class="dropdown-link">Visi & Misi</a>
+            </li>
+            <li class="dropdown-item">
+              <a href="/profil/struktur-organisasi.html" class="dropdown-link">Struktur Organisasi</a>
+            </li>
+          </ul>
         </li>
         <li class="nav-item">
           <a href="/spmb" class="nav-link">
@@ -81,6 +92,19 @@
 
     toggleMenu.addEventListener('click', () => {
       navMenu.classList.toggle('show');
+    });
+
+    // Toggle Drodown
+    const hasDropdown = document.querySelectorAll('.has-dropdown');
+
+    hasDropdown.forEach(item => {
+      item.addEventListener('click', () => {
+        if (item.querySelector('.menu-dropdown').classList.contains('show')) {
+          item.querySelector('.menu-dropdown').classList.remove('show');
+        } else {
+          item.querySelector('.menu-dropdown').classList.add('show');
+        }
+      });
     });
   </script>
 </body>
