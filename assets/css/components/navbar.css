@@ -26,7 +26,7 @@
         @apply flex w-max relative items-center justify-start;
     }
     .nav-menu {
-        @apply xl:flex items-center xl:static absolute xl:w-auto w-screen xl:left-0 bottom-7 left-43 -right-0 transition-all duration-300 ease-in-out;
+        @apply xl:flex items-center xl:static absolute xl:w-auto w-screen xl:left-0 -top-[96vh] left-43 -right-0 transition-all duration-300 ease-in-out;
     }
     .nav-menu.show {
         @apply -translate-x-[25rem];
@@ -35,7 +35,7 @@
         @apply bg-gray-400;
     }
     .nav-item {
-        @apply mx-2 py-5;
+        @apply mx-2 xl:py-5 py-1;
     }
     .nav-link {
         @apply text-gray-800 font-semibold xl:px-2 px-2 w-full hover:text-blue-500 py-1 inline-block;
