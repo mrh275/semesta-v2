@@ -9,7 +9,9 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/components/navbar.css">
   <link rel="stylesheet" href="./assets/css/components/dropdown.css">
+  <link rel="stylesheet" href="./assets/css/components/hero.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 </head>
 
 <body>
@@ -107,7 +109,39 @@
   </nav>
   <!-- End of Navbar Section -->
 
+  <!-- Hero Section -->
+  <section class="hero-wrapper">
+    <div id="hero-content" class="hero-content splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <h1 class="hero-title">Selamat Datang di Website Resmi<br>SMA Negeri 1 Rawamerta</h1>
+            <p class="hero-subtitle">Mewujudkan Generasi Unggul, Berkarakter, dan Berprestasi</p>
+            <a href="/spmb" class="btn btn-primary">SPMB Online</a>
+          </li>
+          <li class="splide__slide">
+            <h1 class="hero-title">Selamat Datang di Website Resmi<br>SMA Negeri 1 Rawamerta</h1>
+            <p class="hero-subtitle">Mewujudkan Generasi Unggul, Berkarakter, dan Berprestasi</p>
+            <a href="/spmb" class="btn btn-primary">PPDB Online</a>
+          </li>
+          <li class="splide__slide">
+            <h1 class="hero-title">Selamat Datang di Website Resmi<br>SMA Negeri 1 Rawamerta</h1>
+            <p class="hero-subtitle">Mewujudkan Generasi Unggul, Berkarakter, dan Berprestasi</p>
+            <a href="/spmb" class="btn btn-primary">SNBP Online</a>
+          </li>
+        </ul>
+      </div>
+      <div class="splide__progress">
+        <div class="splide__progress__bar">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End of Hero Section -->
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
   <script>
     const toggleMenu = document.querySelector('.toggle-menu');
     const navMenu = document.querySelector('.nav-menu');
@@ -128,6 +162,12 @@
         }
       });
     });
+
+    new Splide('#hero-content', {
+      type: 'loop',
+      autoplay: true,
+      interval: 5000,
+    }).mount();
   </script>
 </body>
 
