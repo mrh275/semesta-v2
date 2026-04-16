@@ -5,65 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hero Section</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="../assets/css/components/hero-section.css">
+    <link rel="stylesheet" href="../assets/css/components/hero.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 </head>
 
 <body>
-    <section class="hero-section">
-        <!-- Slider main container -->
-        <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide">
-                    <img src="https://picsum.photos/1280/560?random" class="w-full" alt="random image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://picsum.photos/1280/560?random" class="w-full" alt="random image">
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://picsum.photos/1280/560?random" class="w-full" alt="random image">
+
+    <!-- Hero Section -->
+    <section class="hero-wrapper">
+        <div id="hero-content" class="hero-content splide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <div class="splide-wrapper relative">
+                            <img src="https://picsum.photos/1920/768?random" class="w-full object-cover" alt="random image">
+                            <div class="splide-text absolute inset-0 flex flex-col items-center justify-center text-center bg-black/50">
+                                <h1 class="hero-title">Selamat Datang di Website Resmi<br>SMA Negeri 1 Rawamerta</h1>
+                                <p class="hero-subtitle">Mewujudkan Generasi Unggul, Berkarakter, dan Berprestasi</p>
+                                <a href="/spmb" class="btn btn-primary">SPMB Online</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="splide-wrapper relative">
+                            <img src="https://picsum.photos/1920/768?random" class="w-full object-cover" alt="random image">
+                            <div class="splide-text absolute inset-0 flex flex-col items-center justify-center text-center bg-black/50">
+                                <h1 class="hero-title">Selamat Datang di Website Resmi<br>SMA Negeri 1 Rawamerta</h1>
+                                <p class="hero-subtitle">Mewujudkan Generasi Unggul, Berkarakter, dan Berprestasi</p>
+                                <a href="/spmb" class="btn btn-primary">SPMB Online</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="splide-wrapper relative">
+                            <img src="https://picsum.photos/1920/768?random" class="w-full object-cover" alt="random image">
+                            <div class="splide-text absolute inset-0 flex flex-col items-center justify-center text-center bg-black/50">
+                                <h1 class="hero-title">Selamat Datang di Website Resmi<br>SMA Negeri 1 Rawamerta</h1>
+                                <p class="hero-subtitle">Mewujudkan Generasi Unggul, Berkarakter, dan Berprestasi</p>
+                                <a href="/spmb" class="btn btn-primary">SPMB Online</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="splide__progress">
+                <div class="splide__progress__bar">
                 </div>
             </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
         </div>
     </section>
+    <!-- End of Hero Section -->
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
     <script>
-        const swiper = new Swiper('.swiper', {
-            // Optional parameters
-            direction: 'horizontal',
-            loop: true,
-            autoplay: {
-                delay: 5000,
-            },
-            speed: 1000,
-
-            // If we need pagination
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets',
-            },
-
-            // Navigation arrows
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-
-            // And if we need scrollbar
-            scrollbar: {
-                el: '.swiper-scrollbar',
-            },
-        });
+        new Splide('#hero-content', {
+            type: 'loop',
+            autoplay: true,
+            interval: 5000,
+        }).mount();
     </script>
 </body>
 
