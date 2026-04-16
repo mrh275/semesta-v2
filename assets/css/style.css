@@ -9,5 +9,31 @@ body {
 @import "tailwindcss";
 
 @layer components {
-    
+    .sambutan-hm-section {
+        @apply w-full flex justify-center my-8;
+    }
+    .card-sambutan {
+        @apply  w-3/4 bg-gray-300 rounded-lg py-4 px-4;
+    }
+    .card-sambutan > .card-header {
+        @apply mb-6;
+    }
+    .card-sambutan > .card-header > .card-title {
+        @apply font-bold text-center text-2xl;
+    }
+    .card-sambutan > .card-content {
+        @apply flex justify-start align-middle;
+    }
+    .card-sambutan > .card-content > .hm-img {
+        @apply  w-40;
+    }
+    .card-sambutan > .card-content > .card-text {
+        @apply px-4;
+    }
+    .card-sambutan > .card-content > .card-text > .hm-name {
+        @apply font-semibold text-lg;
+    }
+    .card-sambutan > .card-content > .card-text > .hm-sambutan {
+        @apply text-justify my-4 pr-4;
+    }
 }
