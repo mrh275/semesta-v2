@@ -5,7 +5,7 @@
         @apply flex xl:sticky absolute xl:w-full w-[95%] xl:mx-0 mx-2.5 xl:top-0 xl:rounded-none rounded-xl top-2 lg:relative justify-between lg:justify-between items-center xl:px-12 drop-shadow-sm;
     }
     .bg-light {
-        @apply bg-gray-400;
+        @apply bg-gray-200;
     }
     .navbar-light {
         @apply text-gray-800;
@@ -32,7 +32,7 @@
         @apply -translate-x-[25rem];
     }
     .navbar-light .nav-menu {
-        @apply bg-gray-400;
+        @apply bg-gray-200;
     }
     .nav-item {
         @apply mx-2 xl:py-5 py-1;
