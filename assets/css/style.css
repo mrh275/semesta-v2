@@ -36,4 +36,84 @@ body {
     .card-sambutan > .card-content > .card-text > .hm-sambutan {
         @apply text-justify my-4 pr-4;
     }
+    .main-wrapper {
+        @apply w-full flex justify-center px-16 pb-4;
+    }
+    .main-content {
+        @apply w-3/4 mr-2 bg-gray-200 rounded-lg py-4 px-4;
+    }
+    .sidebar {
+        @apply w-1/4 ml-2 bg-gray-200 rounded-lg;
+    }
+    .tab-header {
+        @apply w-full flex justify-start mb-1;
+    }
+    .tab-link {
+        @apply px-4 py-2 cursor-pointer text-gray-600 font-semibold w-1/2 text-center;
+    }
+    .tab-link:nth-child(1) {
+        @apply border-b-2 border-gray-400 rounded-tl-md;
+    }
+    .tab-link:nth-child(2) {
+        @apply border-b-2 border-gray-400 rounded-tr-md;
+    }
+    .tab-link.active {
+        @apply border-b-2 bg-blue-500 text-white;
+    }
+    .tab-content {
+        @apply w-full h-[35rem] overflow-y-auto bg-gray-200 px-4 py-1 rounded-b-lg;
+    }
+    .tab-card-content-link {
+        @apply w-fit block mb-4;
+    }
+    .tab-card-content {
+        @apply w-full flex justify-start items-start bg-gray-100 rounded-lg p-2 mb-2;
+    }
+    .tab-card-content > .tab-card-img {
+        @apply w-fit h-fit mr-4;
+    }
+    .tab-card-content > .tab-card-post {
+        @apply w-full ml-4;
+    }
+    .tab-card-content > .tab-card-post > .tab-card-title {
+        @apply font-semibold text-lg mb-1;
+    }
+    .tab-card-content > .tab-card-post > .tab-card-author, .tab-card-content > .tab-card-post > .tab-card-category {
+        @apply text-sm text-gray-500 mb-1 mr-1;
+    }
+    .tab-card-content > .tab-card-post > .tab-card-date {
+        @apply text-sm text-gray-500;
+    }
+    .tab-card-content > .tab-card-post > .tab-card-excerpt {
+        @apply text-sm text-gray-700;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+
+      to {
+        opacity: 0;
+      }
+    }
+
+    .tab-content {
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    .tab-content.fade-out {
+      animation: fadeOut 0.3s ease-out forwards;
+    }
 }
