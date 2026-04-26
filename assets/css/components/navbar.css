@@ -2,7 +2,11 @@
 
 @layer components {
     .navbar {
-        @apply flex xl:sticky absolute xl:w-full w-[95%] xl:mx-0 mx-2.5 xl:top-0 xl:rounded-none rounded-xl top-2 lg:relative justify-between lg:justify-between items-center xl:px-12 drop-shadow-sm;
+        @apply flex fixed z-99 xl:w-full py-4 w-[95%] xl:mx-0 mx-2.5 xl:top-0 xl:rounded-none rounded-xl top-2 justify-between lg:justify-between items-center xl:px-12 drop-shadow-sm;
+        transition: all 0.3s linear;
+    }
+    .navbar.fixed {
+        @apply py-0;
     }
     .bg-light {
         @apply bg-gray-200;
@@ -26,7 +30,7 @@
         @apply flex w-max relative items-center justify-start;
     }
     .nav-menu {
-        @apply rounded-lg py-2 xl:flex items-center xl:static absolute xl:w-auto w-screen xl:left-0 top-8 left-43 -right-0 transition-all duration-300 ease-in-out;
+        @apply rounded-lg xl:flex items-center xl:static absolute xl:w-auto w-screen xl:left-0 top-8 left-43 -right-0 transition-all duration-300 ease-in-out;
     }
     .nav-menu.show {
         @apply -translate-x-[25rem];
@@ -45,8 +49,5 @@
     }
     .toggle-menu {
         @apply block xl:hidden cursor-pointer;
-    }
-    .navbar-fixed {
-        @apply fixed z-99;
     }
 }
