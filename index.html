@@ -16,7 +16,7 @@
 
 <body>
   <!-- Navbar Section -->
-  <nav class="navbar bg-light navbar-light navbar-fixed">
+  <nav class="navbar bg-light navbar-light">
     <!-- Brand -->
     <div class="navbar-brand">
       <a href="/" class="brand-img-link">
@@ -175,10 +175,37 @@
   </section>
   <!-- End of Sambutan Kepala Sekolah -->
 
+  <!-- Main Wrapper -->
+  <section class="main-wrapper">
+    <div class="main-content">
+      <h1>Main Content</h1>
+    </div>
+    <aside class="sidebar">
+      <div class="tabs">
+        <div class="tab-header">
+          <button class="tab-link active" data-tab="tab1">Latest Posts</button>
+          <button class="tab-link" data-tab="tab2">Popular Posts</button>
+        </div>
+        <div class="tab-content">
+        </div>
+      </div>
+    </aside>
+  </section>
+  <!-- Content will be here -->
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
   <script>
+    window.addEventListener('scroll', function () {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 0) {
+        navbar.classList.add('fixed');
+      } else {
+        navbar.classList.remove('fixed');
+      }
+    });
+
     const toggleMenu = document.querySelector('.toggle-menu');
     const navMenu = document.querySelector('.nav-menu');
 
@@ -201,9 +228,141 @@
 
     new Splide('#hero-content', {
       type: 'loop',
-      // autoplay: true,
+      autoplay: true,
       interval: 5000,
     }).mount();
+
+    const tabLinks = document.querySelectorAll('.tab-link');
+    const tabContent = document.querySelector('.tab-content');
+    const posts = [
+      {
+        title: 'Post Title 1',
+        author: 'Author 1',
+        category: 'Category 1',
+        date: '2024-06-01',
+        image: 'https://picsum.photos/240/160?random',
+      },
+      {
+        title: 'Post Title 2',
+        author: 'Author 2',
+        category: 'Category 2',
+        date: '2024-06-02',
+        image: 'https://picsum.photos/240/160?random',
+      },
+      {
+        title: 'Post Title 3',
+        author: 'Author 3',
+        category: 'Category 3',
+        date: '2024-06-03',
+        image: 'https://picsum.photos/240/160?random',
+      },
+      {
+        title: 'Post Title 4',
+        author: 'Author 4',
+        category: 'Category 4',
+        date: '2024-06-04',
+        image: 'https://picsum.photos/240/160?random',
+      },
+      {
+        title: 'Post Title 5',
+        author: 'Author 5',
+        category: 'Category 5',
+        date: '2024-06-05',
+        image: 'https://picsum.photos/240/160?random',
+      },
+      {
+        title: 'Post Title 6',
+        author: 'Author 6',
+        category: 'Category 6',
+        date: '2024-06-06',
+        image: 'https://picsum.photos/240/160?random',
+      },
+      {
+        title: 'Post Title 7',
+        author: 'Author 7',
+        category: 'Category 7',
+        date: '2024-06-07',
+        image: 'https://picsum.photos/240/160?random',
+      },
+      {
+        title: 'Post Title 8',
+        author: 'Author 8',
+        category: 'Category 8',
+        date: '2024-06-08',
+        image: 'https://picsum.photos/240/160?random',
+      },
+      {
+        title: 'Post Title 9',
+        author: 'Author 9',
+        category: 'Category 9',
+        date: '2024-06-09',
+        image: 'https://picsum.photos/240/160?random',
+      },
+      {
+        title: 'Post Title 10',
+        author: 'Author 10',
+        category: 'Category 10',
+        date: '2024-06-10',
+        image: 'https://picsum.photos/240/160?random',
+      },
+    ]
+
+    // Function to generate post cards from posts array
+    function renderPostCards(postsData) {
+      return postsData.map(post => `
+        <a href="" class="tab-card-content-link">
+          <div class="tab-card-content">
+            <div class="tab-card-img">
+              <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover">
+            </div>
+            <div class="tab-card-post">
+              <h3 class="tab-card-title">${post.title}</h3>
+              <small class="tab-card-author">
+                <i class="fas fa-user"></i>
+                By ${post.author}
+              </small>
+              <small class="tab-card-category">
+                <i class="fas fa-tag"></i>
+                ${post.category}
+              </small>
+              <p class="tab-card-date">Published on ${post.date}</p>
+              <a href="" class="text-blue-500 hover:underline">Read more</a>
+            </div>
+          </div>
+        </a>
+      `).join('');
+    }
+
+    // Render posts on page load
+    tabContent.innerHTML = renderPostCards(posts);
+
+    tabLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const tabId = link.getAttribute('data-tab');
+
+        // Remove active class from all links
+        tabLinks.forEach(link => link.classList.remove('active'));
+
+        // Add active class to the clicked link
+        link.classList.add('active');
+
+        // Add fade-out animation
+        tabContent.classList.add('fade-out');
+
+        // Wait for fade-out animation to complete, then update content
+        setTimeout(() => {
+          // Update tab content based on the clicked tab
+          if (tabId === 'tab1') {
+            tabContent.innerHTML = renderPostCards(posts);
+          } else if (tabId === 'tab2') {
+            tabContent.innerHTML = renderPostCards(posts.slice().reverse());
+          }
+
+          // Remove fade-out class to trigger fade-in animation
+          tabContent.classList.remove('fade-out');
+        }, 300); // Match the fade-out animation duration
+      });
+    });
   </script>
 </body>
 
